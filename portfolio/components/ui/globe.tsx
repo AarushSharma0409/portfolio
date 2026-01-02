@@ -21,19 +21,8 @@ const GLOBE_CONFIG: COBEOptions = {
   mapBrightness: 6,
   baseColor: [0.3, 0.3, 0.3],
   markerColor: [251 / 255, 100 / 255, 21 / 255],
-  glowColor: [0.5, 0.5, 0.5],
-  markers: [
-    { location: [14.5995, 120.9842], size: 0.3 },
-    { location: [19.076, 72.8777], size: 0.1 },
-    { location: [23.8103, 90.4125], size: 0.05 },
-    { location: [30.0444, 31.2357], size: 0.07 },
-    { location: [39.9042, 116.4074], size: 0.08 },
-    { location: [-23.5505, -46.6333], size: 0.1 },
-    { location: [19.4326, -99.1332], size: 0.1 },
-    { location: [40.7128, -74.006], size: 0.1 },
-    { location: [34.6937, 135.5022], size: 0.05 },
-    { location: [41.0082, 28.9784], size: 0.06 },
-  ],
+  glowColor: [0.1,0.1,0.1],
+  markers:  [],
 }
 
 export function Globe({
@@ -50,7 +39,7 @@ export function Globe({
   const r = useMotionValue(0)
   const rs = useSpring(r, {
     mass: 1,
-    damping: 30,
+    damping: 100,
     stiffness: 100,
   })
 
@@ -103,14 +92,14 @@ export function Globe({
   return (
     <div
       className={cn(
-        "absolute inset-1 mx-250 -my-100 w-screen h-screen",
+        "absolute inset-1 mx-150 -my-100 w-screen h-screen",
         className
       )}
     >
-      <div className="w-full max-w-[2000px] aspect-square">
+      <div className="w-850 max-w-2000 aspect-square">
         <canvas
           className={cn(
-            "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+            "size-full opacity-0 transition-opacity duration-500 contain-[layout_paint_size]"
           )}
           ref={canvasRef}
           onPointerDown={(e) => {

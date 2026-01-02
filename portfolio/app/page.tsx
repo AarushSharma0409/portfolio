@@ -17,8 +17,7 @@ export default function Home() {
         
         {/* Additional content */}
         <div className="absolute top-20 left-20 text-white">
-          <h1 className="text-6xl font-bold">Welcome</h1>
-          <p className="text-xl mt-4">Interactive Globe Experience</p>
+          <h1 className="text-6xl font-bold"></h1>
         </div>
       </div>
     </main>
